@@ -21,11 +21,11 @@ def index(request):
     return render(request, template, context)
 
 
-def post_detail(request, post_id):
+def post_detail(request, id):
     template = 'blog/detail.html'
     post = get_object_or_404(
         sort_post,
-        id=post_id,
+        pk=id,
         pub_date__lte=timezone.now(),
         is_published=True,
         category__is_published=True
