@@ -34,14 +34,17 @@ def post_detail(request, post_id):
     return render(request, template, context)
 
 
-def category_posts(request, sort_post, category_slug):
+def category_posts(request, category_slug):
     template = 'blog/category.html'
     category = get_object_or_404(
         Category,
         slug=category_slug,
         is_published=True
     )
-    post_list = sort_post().filter('category')
+    post_list = category.posts.filter(
+        is_published=True,
+        pub_date__lte=datetime.datetime.now()
+    )
     context = {
         'post_list': post_list,
         'category': category,
