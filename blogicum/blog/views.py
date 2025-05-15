@@ -36,7 +36,7 @@ def post_detail(request, post_id):
     return render(request, template, context)
 
 
-def category_posts(request, category_slug, sort_post):
+def category_posts(request, sort_post, category_slug):
     template = 'blog/category.html'
     category = get_object_or_404(
         Category,
