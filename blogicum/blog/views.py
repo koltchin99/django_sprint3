@@ -14,7 +14,6 @@ def sort_post(request):
     ).order_by('-pub_date')
 
 
-
 def index(request):
     template = 'blog/index.html'
     post_list = sort_post()[:settings.MY_CONST_POSTS]
