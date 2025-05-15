@@ -41,8 +41,9 @@ def category_posts(request, sort_post, category_slug):
         slug=category_slug,
         is_published=True
     )
+    post_list = sort_post().filter('category')
     context = {
-        'sort_post': sort_post(),
+        'post_list': post_list,
         'category': category,
     }
     return render(request, template, context)
