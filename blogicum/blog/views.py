@@ -5,21 +5,20 @@ from blog.models import Post, Category
 
 
 def sort_post(request):
-    Post.objects.select_related(
+    return Post.objects.select_related(
         'category', 'location', 'author'
     ).filter(
         pub_date__lte=timezone.now(),
         is_published=True,
         category__is_published=True
     ).order_by('-pub_date')
-    return request
 
 
-def index(request, sort_post):
+
+def index(request):
     template = 'blog/index.html'
-    sort_post().order_by('-pub_date')[:settings.MY_CONST_POSTS]
-
-    context = {'post_list': sort_post}
+    post_list = sort_post()[:settings.MY_CONST_POSTS]
+    context = {'post_list': post_list}
     return render(request, template, context)
 
 
