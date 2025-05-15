@@ -43,7 +43,7 @@ def category_posts(request, category_slug):
     )
     post_list = category.posts.filter(
         is_published=True,
-        pub_date__lte=datetime.datetime.now()
+        pub_date__lte=timezone.now()
     )
     context = {
         'post_list': post_list,
