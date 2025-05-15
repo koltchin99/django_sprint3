@@ -17,7 +17,7 @@ def sort_post(request):
 
 def index(request, sort_post):
     template = 'blog/index.html'
-    sort_post()[:settings.MY_CONST_POSTS]
+    sort_post().order_by('-pub_date')[:settings.MY_CONST_POSTS]
 
     context = {'post_list': sort_post}
     return render(request, template, context)
