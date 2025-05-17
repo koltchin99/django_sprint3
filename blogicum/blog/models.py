@@ -1,14 +1,14 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
 
-from .const import LENGTH
+from blog.constans import MAX_LENGTH
 
 User = get_user_model()
 
 
 class Category(models.Model):
     title = models.CharField(
-        LENGTH,
+        max_length = MAX_LENGTH,
         verbose_name='Заголовок'
     )
     description = models.TextField(
@@ -42,7 +42,7 @@ class Category(models.Model):
 
 class Location(models.Model):
     name = models.CharField(
-        LENGTH,
+        max_length = MAX_LENGTH,
         verbose_name='Название места'
     )
     is_published = models.BooleanField(
@@ -65,7 +65,7 @@ class Location(models.Model):
 
 class Post(models.Model):
     title = models.CharField(
-        LENGTH,
+        max_length = MAX_LENGTH,
         verbose_name='Заголовок'
     )
     text = models.TextField(
