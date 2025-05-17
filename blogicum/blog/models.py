@@ -12,6 +12,7 @@ class AbstractModel(models.Model):
         verbose_name='Опубликовано',
         help_text=('Снимите галочку, чтобы скрыть публикацию.')
     )
+    
 
     class Meta:
         abstract = True
