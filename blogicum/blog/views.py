@@ -4,6 +4,7 @@ from django.utils import timezone
 from .const import LIMIT
 from blog.models import Post, Category
 
+
 def sort_post():
     return Post.objects.select_related(
         'category', 'location', 'author'
