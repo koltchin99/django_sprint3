@@ -130,7 +130,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 print("TEMPLATES_DIR:", TEMPLATES_DIR)
-
-MAX_LENGTH = 256
-
-MAX_LIMIT = 32
