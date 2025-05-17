@@ -14,6 +14,7 @@ def sort_post():
         category__is_published=True
     )
 
+
 def index(request):
     template = 'blog/index.html'
     post_list = sort_post().order_by('-pub_date')[:LIMIT]

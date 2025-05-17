@@ -26,4 +26,4 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'text')
     date_hierarchy = 'pub_date'
     filter_horizontal = ()
-    raw_id_fields = ('author',)
+    raw_id_fields = ('related_name',)
