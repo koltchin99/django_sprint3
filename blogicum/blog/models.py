@@ -13,7 +13,7 @@ class AbstractModel(models.Model):
         help_text=('Снимите галочку, чтобы скрыть публикацию.')
     )
 
-    class Meta:    
+    class Meta:
         abstract = True
 
 
