@@ -15,7 +15,7 @@ class AbstractModel(models.Model):
 
     class Meta:
         abstract = True
-        
+
 
 class Category(AbstractModel):
     title = models.CharField(
