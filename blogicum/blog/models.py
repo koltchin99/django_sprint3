@@ -1,10 +1,9 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
 
 from blog.constants import MAX_LENGTH
 
 User = get_user_model()
-
 
 
 class AbstractModel(models.Model):
@@ -15,6 +14,7 @@ class AbstractModel(models.Model):
     )
     class Meta:
         abstract = True
+        
 
 class Category(AbstractModel):
     title = models.CharField(

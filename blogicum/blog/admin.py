@@ -23,7 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
                 'slug',
             )
         }),
-        (_('Дополнительные настройки'), {
+        ('Дополнительные настройки', {
             'classes': ('collapse',),
             'fields': (
                 'is_published',
@@ -47,7 +47,7 @@ class LocationAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('name',)
         }),
-        (_('Дополнительные настройки'), {
+        ('Дополнительные настройки', {
             'classes': ('collapse',),
             'fields': (
                 'is_published',
@@ -61,7 +61,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'pub_date',
-        'author',
+        'related_name',
         'location',
         'category',
         'is_published',
@@ -78,7 +78,7 @@ class PostAdmin(admin.ModelAdmin):
             'fields': (
                 'title',
                 'text',
-                'author',
+                'related_name',
                 'location',
                 'category',
             )
